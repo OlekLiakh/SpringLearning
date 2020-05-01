@@ -9,9 +9,13 @@
 <body>
     <div th:insert="blocks/header ::  heade"> </div>
 
-
     <div class = "container mt-5">
         <h1>BLOG</h1>
+        <div th:each="el : ${posts}" class = "alert alert-info mt-2">
+            <h3 th:text="${el.title}"/>
+            <p th:text="${el.announcement}"/>
+            <a th:href="'/blog'+ ${el.id}">Details</a>
+        </div>
     </div>
 
     <div th:insert="blocks/footer :: foote"></div>
